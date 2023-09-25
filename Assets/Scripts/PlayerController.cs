@@ -48,6 +48,15 @@ public class PlayerController : MonoBehaviour
 		Vector3 movement = new Vector3(movementX, 0.0f, movementY);
 
 		rb.AddForce(movement * speed);
+
+
+		// Comprobación de caída del jugador
+
+		if (rb.transform.position.y < -1.0f) 
+		{
+
+			SceneManager.LoadScene(scene.buildIndex, LoadSceneMode.Single);
+		}
 	}
 
 	void OnTriggerEnter(Collider other)
@@ -75,9 +84,9 @@ public class PlayerController : MonoBehaviour
 
 	void SetCountText()
 	{
-		countText.text = "Count: " + count.ToString();
+		countText.text = "count: " + count.ToString();
 
-		if (count >= 1)
+		if (count >= 3)
 		{
 			LoadNextLevel();
 		}
