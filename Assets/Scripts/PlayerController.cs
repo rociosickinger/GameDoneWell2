@@ -84,9 +84,9 @@ public class PlayerController : MonoBehaviour
 
 	void SetCountText()
 	{
-		countText.text = "Count: " + count.ToString();
+		countText.text = "count: " + count.ToString();
 
-		if (count >= 1)
+		if (count >= 3)
 		{
 			LoadNextLevel();
 		}
